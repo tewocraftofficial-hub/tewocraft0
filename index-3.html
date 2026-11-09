@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#ffd43b">
+<title>TewoCraft — Магазин Minecraft</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rubik:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--yellow:#ffd43b;--gold:#ffb800;--ink:#202018;--muted:#77766d;--cream:#fffdf4;--line:#eee8d6;--green:#78bd45;--shadow:0 14px 40px #4a390d14}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:Rubik,system-ui,sans-serif;overflow-x:hidden}body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.16;z-index:-1;background-image:radial-gradient(#d5b84f 1px,transparent 1px);background-size:22px 22px}.pixel{font-family:'Press Start 2P',monospace;letter-spacing:-1px}.wrap{width:min(1160px,calc(100% - 36px));margin:auto}.topbar{position:sticky;top:0;z-index:20;background:#fffdf4eF;backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink);font-weight:900;font-size:19px}.brand-icon{width:42px;height:42px;display:grid;place-items:center;background:var(--yellow);border:3px solid var(--ink);box-shadow:4px 4px 0 var(--ink);font-size:22px;transform:rotate(-3deg)}.navlinks{display:flex;gap:27px}.navlinks a{font-size:14px;text-decoration:none;color:#4d4b42;font-weight:700}.navlinks a:hover{color:#c18a00}.navright{display:flex;gap:10px;align-items:center}.currency{border:2px solid var(--ink);background:white;border-radius:10px;padding:10px 12px;font-weight:800;cursor:pointer;outline:none}.cartbtn,.primary{border:2px solid var(--ink);background:var(--yellow);color:var(--ink);font-weight:900;border-radius:12px;padding:12px 16px;box-shadow:4px 4px 0 var(--ink);cursor:pointer;transition:.18s;position:relative}.cartbtn:hover,.primary:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}.cart-count{background:var(--ink);color:white;border-radius:20px;padding:2px 7px;margin-left:5px;font-size:11px}.hero{padding:62px 0 50px;position:relative;overflow:hidden}.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}.eyebrow{display:inline-flex;gap:8px;align-items:center;background:#fff1b8;border:1px solid #f0d46e;border-radius:99px;padding:8px 13px;font-weight:800;font-size:12px}.hero h1{font-size:clamp(34px,5vw,62px);line-height:1.04;margin:22px 0 16px;font-weight:900;letter-spacing:-2px}.hero h1 span{color:#d99b00;text-shadow:3px 3px 0 #ffe9a0}.hero p{font-size:17px;line-height:1.7;color:#68665b;max-width:560px}.hero-actions{display:flex;gap:14px;align-items:center;margin-top:27px;flex-wrap:wrap}.secondary{padding:12px 17px;border:2px solid var(--ink);border-radius:12px;text-decoration:none;color:var(--ink);font-weight:800;background:white}.hero-art{min-height:340px;position:relative;display:grid;place-items:center}.sun{position:absolute;width:290px;height:290px;border-radius:50%;background:linear-gradient(145deg,#ffe98b,#ffc928);box-shadow:inset -14px -16px 0 #e9ad1c;animation:float 5s ease-in-out infinite}.block{position:absolute;border:4px solid var(--ink);box-shadow:8px 9px 0 #272319;display:grid;place-items:center;font-size:76px;animation:float 4s ease-in-out infinite}.chest{width:180px;height:140px;background:linear-gradient(#d99a3d 0 32%,#9d5e24 32%);border-radius:8px;z-index:2;transform:rotate(-7deg)}.chest:before{content:"";position:absolute;top:35%;left:0;right:0;height:12px;background:#f4c65d;border-block:3px solid var(--ink)}.chest:after{content:"";position:absolute;width:22px;height:30px;top:47%;left:calc(50% - 11px);background:var(--yellow);border:3px solid var(--ink)}.gem{position:absolute;font-size:44px;z-index:3;filter:drop-shadow(3px 4px 0 #222);animation:float 3s ease-in-out infinite}.gem.g1{top:35px;right:15px}.gem.g2{bottom:28px;left:10px;animation-delay:-1s}.spark{position:absolute;color:#d99b00;font-size:30px;animation:pulse 2s infinite}.spark.s1{top:35px;left:45px}.spark.s2{right:35px;bottom:25px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:40px}.stat{background:white;border:1px solid var(--line);border-radius:15px;padding:17px;box-shadow:var(--shadow)}.stat b{display:block;font-size:22px}.stat small{color:var(--muted);font-weight:600}.section{padding:48px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:15px;margin-bottom:22px}.kicker{color:#b17b00;font-weight:900;font-size:12px;text-transform:uppercase;letter-spacing:1.3px}.section h2{font-size:clamp(24px,3.3vw,36px);margin:8px 0 0;font-weight:900;letter-spacing:-1px}.section-sub{color:var(--muted);margin:8px 0 0}.tabs{display:flex;gap:8px;flex-wrap:wrap}.tab{border:1px solid var(--line);background:white;border-radius:10px;padding:10px 14px;font-weight:800;cursor:pointer}.tab.active{background:var(--yellow);border-color:var(--ink);box-shadow:3px 3px 0 var(--ink)}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.product{min-height:100%;background:linear-gradient(145deg,#fff 0%,#fffdf6 72%,#fff5d0 100%);border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:var(--shadow);position:relative;overflow:hidden;transition:.2s;cursor:pointer}.product:hover{transform:translateY(-8px) scale(1.012);border-color:#e4bc3c;box-shadow:0 18px 38px #9b760d20}.product:after{content:"";position:absolute;inset:auto -30px -60px auto;width:140px;height:140px;background:#fff4c7;border-radius:50%;z-index:0}.product>*{position:relative;z-index:1}.product-top{display:flex;justify-content:space-between;align-items:start}.emoji{width:74px;height:74px;display:grid;place-items:center;font-size:42px;background:#fff5cf;border:2px solid #f0df9e;border-radius:16px}.tag{font-size:10px;font-weight:900;text-transform:uppercase;background:#eaf7df;color:#477a24;border-radius:99px;padding:6px 8px}.product h3{font-size:19px;margin:17px 0 7px;letter-spacing:-.35px}.product-perks{display:flex;flex-wrap:wrap;gap:5px;margin:-5px 0 13px}.perk{font-size:10px;font-weight:800;color:#655018;background:#fff0b2;border:1px solid #f2d66c;border-radius:99px;padding:5px 7px}.product.featured{border:2px solid #e9b600;box-shadow:0 12px 30px #d9a90025}.product.featured:before{content:'✦ ВЫГОДНЫЙ ВЫБОР';position:absolute;top:0;right:0;background:var(--yellow);color:#332600;font-size:9px;font-weight:900;padding:7px 10px;border-radius:0 0 0 12px;z-index:3}.product p{font-size:13px;line-height:1.5;color:var(--muted);min-height:38px;margin:0 0 15px}.product-bottom{display:flex;justify-content:space-between;align-items:center;gap:8px}.price{font-size:20px;font-weight:900}.add{border:2px solid var(--ink);background:var(--yellow);border-radius:10px;padding:9px 12px;font-weight:900;cursor:pointer;transition:.15s}.add:hover{transform:scale(1.06);box-shadow:3px 3px 0 var(--ink)}.case .emoji{background:#fff0bd}.case:nth-child(2) .emoji{background:#e9f3ff}.case:nth-child(3) .emoji{background:#f1eaff}.donate-perks{margin-top:24px;padding:22px;border-radius:20px;background:linear-gradient(120deg,#28271f,#45402b);color:#fff;box-shadow:0 14px 35px #4a390d20;position:relative;overflow:hidden}.donate-perks:after{content:'✦';position:absolute;right:22px;top:-35px;font-size:130px;color:#ffffff0b}.donate-perks-head{display:flex;flex-direction:column;gap:7px;margin-bottom:18px;position:relative;z-index:1}.donate-perks-head span{color:#ffd43b;font-size:11px;font-weight:900;letter-spacing:1.5px}.donate-perks-head b{font-size:23px}.donate-perks-head small{color:#d1cdbf}.donate-perk-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;position:relative;z-index:1}.donate-perk-grid div{padding:13px;background:#ffffff12;border:1px solid #ffffff20;border-radius:13px;font-size:20px}.donate-perk-grid b,.donate-perk-grid small{display:block}.donate-perk-grid b{font-size:12px;margin:7px 0 4px}.donate-perk-grid small{font-size:10px;line-height:1.4;color:#d1cdbf}.banner{background:var(--ink);color:white;border-radius:22px;padding:26px 30px;display:flex;align-items:center;justify-content:space-between;gap:20px;overflow:hidden;position:relative}.banner:after{content:"✦";position:absolute;font-size:170px;color:#ffffff0c;right:24%;top:-70px}.banner h3{font-size:23px;margin:0 0 8px}.banner p{color:#c5c2b7;margin:0;line-height:1.5}.banner .primary{z-index:1;white-space:nowrap}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.step{background:white;border:1px solid var(--line);border-radius:15px;padding:20px}.step strong{font-size:28px;color:#d99b00}.step h4{margin:10px 0 6px}.step p{color:var(--muted);font-size:13px;line-height:1.5;margin:0}.socials{display:flex;align-items:center;gap:12px;margin:15px 0 7px}.social-icon{width:44px;height:44px;border:1px solid #ffffff35;border-radius:13px;background:#ffffff12;display:grid;place-items:center;cursor:pointer;transition:transform .18s,background .18s;text-decoration:none}.social-icon:hover{transform:translateY(-4px) scale(1.06);background:#ffffff25}.social-icon svg{width:22px;height:22px;fill:#fff}.social-note{font-size:11px!important;color:#c9c5b8!important;margin:4px 0 0}.footer{background:#24231d;color:white;padding:32px 0;margin-top:40px}.footer-row{display:flex;justify-content:space-between;gap:20px;align-items:center}.footer p{color:#bcb9ac;font-size:12px;line-height:1.5}.modal-bg{position:fixed;inset:0;background:#17160dcc;z-index:50;display:none;align-items:center;justify-content:center;padding:18px}.modal-bg.show{display:flex}.modal{width:min(480px,100%);background:white;border:3px solid var(--ink);border-radius:20px;padding:22px;box-shadow:9px 9px 0 #0007;animation:pop .2s ease}.modal-head{display:flex;justify-content:space-between;align-items:center}.close{border:0;background:#f4f1e8;border-radius:9px;padding:8px 11px;font-weight:900;cursor:pointer}.cart-line{display:flex;justify-content:space-between;gap:12px;padding:13px 0;border-bottom:1px solid var(--line);font-size:14px}.qty{display:flex;align-items:center;gap:7px}.qty button{border:1px solid var(--line);background:#fff7d9;border-radius:6px;padding:3px 8px;cursor:pointer;font-weight:900}.total{display:flex;justify-content:space-between;font-size:19px;font-weight:900;margin:20px 0}.field{width:100%;border:2px solid var(--line);border-radius:10px;padding:13px;font:600 14px Rubik;margin:7px 0 13px}.notice{font-size:11px;color:#777;line-height:1.5}.toast{position:fixed;bottom:22px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;z-index:80;background:#222;color:white;padding:12px 18px;border-radius:12px;font-weight:800;box-shadow:0 8px 24px #0003;transition:.25s}.toast.show{opacity:1;transform:translate(-50%,0)}.floatcoin{position:fixed;pointer-events:none;z-index:90;font-size:24px;animation:coinfly .65s ease-out forwards}@keyframes float{0%,100%{translate:0 0}50%{translate:0 -12px}}@keyframes pulse{50%{transform:scale(1.3) rotate(15deg);opacity:.5}}@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}@keyframes coinfly{to{transform:translate(35px,-70px) rotate(35deg) scale(.4);opacity:0}}@media(max-width:800px){.navlinks{display:none}.hero-grid{grid-template-columns:1fr}.hero-art{min-height:270px;grid-row:1}.hero{padding-top:28px}.grid{grid-template-columns:repeat(2,1fr)}.stats{margin-top:22px}.banner{align-items:flex-start;flex-direction:column}.steps{grid-template-columns:1fr}.donate-perk-grid{grid-template-columns:repeat(2,1fr)}.section-head{align-items:flex-start;flex-direction:column}}@media(max-width:520px){.wrap{width:min(100% - 24px,1160px)}.brand{font-size:15px}.brand-icon{width:36px;height:36px}.nav{height:65px}.currency{padding:9px 7px}.cartbtn{padding:10px}.hero h1{font-size:36px}.hero-art{min-height:235px}.sun{width:220px;height:220px}.chest{transform:scale(.8) rotate(-7deg)}.grid{grid-template-columns:1fr 1fr;gap:10px}.product{padding:12px;border-radius:14px}.emoji{width:58px;height:58px;font-size:32px}.product h3{font-size:15px;margin-top:12px}.product p{font-size:11px;min-height:48px}.price{font-size:16px}.add{padding:8px;font-size:11px}.tag{font-size:8px}.stats{gap:7px}.stat{padding:12px}.stat b{font-size:17px}.stat small{font-size:10px}.footer-row{align-items:flex-start;flex-direction:column}}
+
+.info-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
+.info-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:var(--shadow)}
+.info-card h3{margin:0 0 9px;font-size:17px}
+.info-card p,.info-card li{color:var(--muted);font-size:13px;line-height:1.65}
+.info-card ul{padding-left:19px;margin:8px 0}
+.info-note{background:#fff5cf;border:1px solid #efd77f;border-radius:12px;padding:13px 15px;color:#5f4a0b;font-size:12px;line-height:1.6;margin-top:15px}
+.footer-links{display:flex;gap:14px;flex-wrap:wrap;margin-top:12px}
+.footer-links a{color:#ffe08a;font-size:12px;font-weight:700;text-decoration:none}
+.footer-links a:hover{text-decoration:underline}
+@media(max-width:650px){.info-grid{grid-template-columns:1fr}}
+
+.shop-tools{display:flex;flex-direction:column;gap:10px;min-width:min(100%,340px)}.search-field{margin:0;background:#fff}.menu-toggle{width:44px;height:44px;display:flex;flex-direction:column;justify-content:center;gap:5px;align-items:center;border:2px solid var(--ink);background:#fff;border-radius:12px;cursor:pointer;box-shadow:3px 3px 0 var(--ink);flex-shrink:0;transition:.2s}
+.menu-toggle:hover{transform:translateY(-2px)}.menu-toggle span{width:19px;height:2px;background:var(--ink);border-radius:4px;transition:.2s}
+.drawer-backdrop{position:fixed;inset:0;background:#14130dcc;z-index:60;opacity:0;visibility:hidden;transition:.25s}
+.drawer{position:fixed;z-index:61;top:0;left:0;height:100dvh;width:min(360px,88vw);background:#fffdf4;padding:22px;box-shadow:12px 0 40px #0003;transform:translateX(-105%);transition:transform .3s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column;overflow:auto}
+.drawer-open .drawer-backdrop{opacity:1;visibility:visible}.drawer-open .drawer{transform:translateX(0)}.drawer-head{display:flex;justify-content:space-between;align-items:center;padding-bottom:20px;border-bottom:1px solid var(--line)}
+.drawer-user{display:flex;align-items:center;gap:12px;padding:20px 0}.avatar{width:48px;height:48px;border-radius:15px;background:var(--yellow);border:2px solid var(--ink);display:grid;place-items:center;font-size:24px}.drawer-user b,.drawer-user small{display:block}.drawer-user small{font-size:11px;color:var(--muted);margin-top:4px;line-height:1.4}
+.drawer-action,.drawer-link{width:100%;display:flex;justify-content:space-between;align-items:center;text-decoration:none;color:var(--ink);padding:14px;border:1px solid var(--line);border-radius:12px;background:#fff;font-weight:800;margin:5px 0;cursor:pointer;font:800 14px Rubik}
+.drawer-action{background:var(--yellow);border:2px solid var(--ink);box-shadow:3px 3px 0 var(--ink);margin-bottom:12px}
+.drawer-link:hover,.drawer-action:hover{transform:translateX(3px);background:#fff4c7}.drawer-support{margin-top:20px;padding:17px;background:#25241e;color:white;border-radius:16px}.drawer-support p{font-size:12px;color:#d3d0c4;line-height:1.5}.support-link{display:block;color:#ffe08a;font-size:12px;font-weight:700;margin:12px 0;text-decoration:none}.drawer-foot{margin-top:auto;padding-top:20px;color:#888}
+.profile-modal{max-height:88dvh;overflow:auto}.profile-history{margin-top:20px;border-top:1px solid var(--line);padding-top:15px}.history-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}.text-btn{border:0;background:none;color:#9b7100;font-weight:800;cursor:pointer}.history-item{padding:12px;border:1px solid var(--line);border-radius:12px;margin:9px 0;background:#fffdf7}.history-item b{display:block}.history-item small{display:block;color:#777;margin-top:4px}.status-demo{display:inline-block;margin-top:7px;padding:5px 8px;border-radius:99px;background:#fff0c2;color:#765500;font-size:10px;font-weight:900}
+.support-form{margin-top:18px}.support-form label{display:block;font-size:12px;font-weight:800;margin-top:8px}.support-form textarea{resize:vertical}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}.reveal.visible{opacity:1;transform:translateY(0)}
+@media(max-width:800px){.menu-toggle{order:0}.nav{gap:10px}.brand{margin-right:auto}.navright{gap:6px}.navlinks{display:none}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+</style></head>
+<body>
+<header class="topbar"><div class="wrap nav"><button class="menu-toggle" id="menuToggle" aria-label="Открыть меню" aria-expanded="false"><span></span><span></span><span></span></button><a class="brand" href="#home"><span class="brand-icon">⛏</span><span>TEWO<span style="color:#d99b00">CRAFT</span></span></a><nav class="navlinks"><a href="#privileges">Привилегии</a><a href="#cases">Кейсы</a><a href="#how">Как купить</a><a href="#about">О проекте</a><a href="#payment">Оплата</a><a href="#documents">Документы</a><a href="#support">Поддержка</a></nav><div class="navright"><select class="currency" id="currency" aria-label="Валюта"><option value="MDL">MDL lei</option><option value="RUB">RUB ₽</option><option value="USD">USD $</option><option value="EUR">EUR €</option></select><button class="cartbtn" id="openCart">🛒 <span class="cart-count" id="count">0</span></button></div></div></header>
+
+<aside class="drawer-backdrop" id="drawerBackdrop" aria-hidden="true"></aside>
+<aside class="drawer" id="sideDrawer" aria-label="Меню TewoCraft">
+  <div class="drawer-head"><a class="brand" href="#home"><span class="brand-icon">⛏</span><span>TEWO<span style="color:#d99b00">CRAFT</span></span></a><button class="close" id="closeDrawer" aria-label="Закрыть меню">✕</button></div>
+  <div class="drawer-user"><div class="avatar">⛏</div><div><b id="drawerUserName">Мой профиль</b><small id="drawerUserHint">Войди, чтобы сохранить данные на этом устройстве</small></div></div>
+  <button class="drawer-action" id="openProfile">👤 Профиль и покупки <span>→</span></button>
+  <a class="drawer-link" href="#privileges">👑 Привилегии</a><a class="drawer-link" href="#cases">📦 Кейсы</a><a class="drawer-link" href="#payment">💳 Оплата и получение</a><a class="drawer-link" href="#documents">📄 Документы</a>
+  <div class="drawer-support"><b>Нужна помощь?</b><p>Напиши нам — ответим в течение 24 часов.</p><a class="support-link" href="mailto:tewocraft.official@gmail.com">✉ tewocraft.official@gmail.com</a><a class="support-link" href="https://t.me/Tewo_Dev" target="_blank" rel="noopener">✈ Telegram-поддержка</a><a class="support-link" href="#support">Открыть форму поддержки →</a></div>
+  <small class="drawer-foot">TewoCraft · Minecraft 1.16.5</small>
+</aside>
+<div class="modal-bg" id="profileModal" role="dialog" aria-modal="true" aria-labelledby="profileTitle">
+ <div class="modal profile-modal"><div class="modal-head"><h3 id="profileTitle" style="margin:0">👤 Мой профиль</h3><button class="close" id="closeProfile">✕</button></div>
+ <p class="notice">Профиль хранится только в этом браузере на данном устройстве. Это не полноценная регистрация на сервере.</p>
+ <label for="profileNick" style="font-weight:800;font-size:13px">Ник Minecraft Java</label><input id="profileNick" class="field" maxlength="16" placeholder="Твой игровой ник">
+ <label for="profileContact" style="font-weight:800;font-size:13px">Email или Telegram</label><input id="profileContact" class="field" maxlength="120" placeholder="name@example.com или @username">
+ <button class="primary" id="saveProfile" style="width:100%">Сохранить профиль</button>
+ <div class="profile-history"><div class="history-title"><b>🧾 История заказов</b><button class="text-btn" id="clearHistory">Очистить</button></div><div id="purchaseHistory"><p class="notice">Пока нет заказов.</p></div></div>
+ </div>
+</div>
+
+<main id="home"><section class="hero"><div class="wrap hero-grid"><div><div class="eyebrow">🟡 MINECRAFT JAVA • TEWOCRAFT.ME</div><h1>ТВОЙ МИР.<br><span>ТВОИ ПРАВИЛА.</span></h1><p>Прокачай игру на TewoCraft! Выбирай игровые привилегии и кейсы, открывай новые возможности на каждом режиме.</p><div class="hero-actions"><a class="primary" href="#privileges" style="text-decoration:none">⚡ В магазин</a></div><div class="stats"><div class="stat"><b>4 режима</b><small>Гриф • SMP • BedWars</small></div><div class="stat"><b>24/7</b><small>Играй когда хочешь</small></div><div class="stat"><b>GG!</b><small>Твой новый уровень</small></div></div></div><div class="hero-art"><div class="sun"></div><div class="block chest"></div><span class="gem g1">💎</span><span class="gem g2">🪙</span><span class="spark s1">✦</span><span class="spark s2">✧</span></div></div></section>
+<section class="section" id="privileges"><div class="wrap"><div class="section-head"><div><div class="kicker">Выбери свой апгрейд</div><h2>👑 Привилегии</h2><p class="section-sub">Больше рангов, бонусов и игровых возможностей — включая BedWars!</p></div><div class="shop-tools"><input id="productSearch" class="field search-field" type="search" placeholder="🔎 Найти привилегию..." aria-label="Поиск товаров"><div class="tabs" id="modeTabs"><button class="tab active" data-mode="Все режимы">Все режимы</button><button class="tab" data-mode="Гриф">⚔ Гриф</button><button class="tab" data-mode="Анархия">☠ Анархия</button><button class="tab" data-mode="SMP">🌲 SMP</button><button class="tab" data-mode="BedWars">🛏 BedWars</button></div></div></div><div class="grid" id="privGrid"></div><div class="donate-perks"><div class="donate-perks-head"><span>✨ TEWOCRAFT PLUS</span><b>Донат, который заметен!</b><small>Выбирай ранг под свой стиль и открывай больше возможностей.</small></div><div class="donate-perk-grid"><div>👑 <b>Уникальный статус</b><small>Префикс и особое оформление</small></div><div>⚡ <b>Больше удобства</b><small>Дополнительные команды и лимиты</small></div><div>🎁 <b>Бонусы каждый день</b><small>Наборы и игровые подарки</small></div><div>💬 <b>Будь заметнее</b><small>Выделяйся в чате и на сервере</small></div></div></div></div></section>
+<section class="section" id="cases" style="background:#fff9e8">
+  <div class="wrap">
+    <div class="section-head">
+      <div><div class="kicker">Открой свой сюрприз</div><h2>📦 Кейсы TewoCraft</h2><p class="section-sub">Выбирай кейс и получай игровые косметические предметы и оформление. Токены и игровая валюта не продаются.</p></div>
+    </div>
+    <div class="grid" id="caseGrid"></div>
+  </div>
+</section>
+
+
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="section-head"><div><div class="kicker">Информация о проекте</div><h2>О TewoCraft</h2></div></div>
+    <div class="info-grid">
+      <article class="info-card">
+        <h3>Что такое TewoCraft?</h3><p><strong>Название проекта: TewoCraft (бренд Tewo).</strong></p>
+        <p>TewoCraft — игровой Minecraft-проект. В магазине представлены цифровые игровые привилегии и наборы для использования на сервере TewoCraft. Покупка не является приобретением физического товара.</p>
+      </article>
+      <article class="info-card">
+        <h3>Как получить покупку?</h3>
+        <p>После запуска платёжной системы и подтверждения платежа цифровой товар будет выдан на сервере по указанному игровому нику. До подключения платёжного API оформление заказа работает в демонстрационном режиме.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="payment" style="background:#fff9e8">
+  <div class="wrap">
+    <div class="section-head"><div><div class="kicker">Перед оформлением</div><h2>Оплата и получение</h2></div></div>
+    <div class="info-grid">
+      <article class="info-card">
+        <h3>Способы оплаты</h3>
+        <p>Онлайн-оплата будет доступна после подключения и активации платёжного провайдера. Доступные способы оплаты и итоговая сумма будут показаны на этапе оформления заказа.</p>
+      </article>
+      <article class="info-card">
+        <h3>Цифровой товар</h3>
+        <p>Перед оплатой проверьте выбранный товар и правильность игрового ника Minecraft Java. Не передавайте пароль от игрового аккаунта: для оформления заказа он не требуется.</p>
+      </article>
+    </div>
+    <div class="info-note">Лимит корзины зависит от выбранной валюты: 2 200 MDL, 10 000 RUB, 122 USD или 110 EUR. Отображаемые пересчёты ориентировочные и заданы фиксированными коэффициентами; это не онлайн-курс валют. Перед реальным запуском лимит нужно повторно проверять на сервере и у платёжного провайдера.</div><div class="info-note">Важно: сейчас магазин находится в демонстрационном режиме. Оплата банковской картой на сайте не принимается. Не вводите данные карты на этой странице.</div>
+  </div>
+</section>
+
+
+<section class="section" id="documents" style="background:#fff9e8">
+ <div class="wrap">
+  <div class="section-head"><div><div class="kicker">Юридическая информация</div><h2>Документы магазина</h2><p class="section-sub">Каждый документ содержит дату редакции 09.11.2026. Перед приёмом реальных платежей требуется проверка сведений продавца и согласование с платёжным провайдером.</p></div></div>
+  <div class="info-grid">
+   <article class="info-card" id="offer">
+    <h3>Пользовательское соглашение</h3><p><strong>Дата редакции: 09.11.2026.</strong></p>
+    <h4>1. Общие положения</h4>
+    <p>1.1. Настоящее Пользовательское соглашение (далее — «Соглашение») регулирует порядок использования сайта и магазина TewoCraft (далее — «Сервис»).</p>
+    <p>1.2. Администрация предоставляет интерфейс для ознакомления с цифровыми игровыми товарами, оформления заявок и связи со службой поддержки.</p>
+    <p>1.3. Используя Сервис, пользователь подтверждает, что ознакомился с условиями. Если пользователь не согласен с ними, он должен прекратить использование Сервиса.</p>
+    <h4>2. Характер услуг и цифровых товаров</h4>
+    <p>2.1. В каталоге могут размещаться цифровые игровые привилегии, кейсы, косметические элементы и иные нематериальные товары, предназначенные для использования в проекте TewoCraft.</p>
+    <p>2.2. Товар не является физическим предметом и не предполагает доставку почтой. Состав, назначение, режим сервера, стоимость и иные существенные характеристики указываются в карточке товара или при оформлении заказа.</p>
+    <p>2.3. Изображения и визуальные элементы могут носить иллюстративный характер. При расхождении приоритет имеет текстовое описание товара и подтверждённые условия заказа.</p>
+    <p>2.4. Совместимость указывается для Minecraft Java Edition, версия сервера — 1.16.5. Доступность функций зависит от режима и технического состояния сервера.</p>
+    <h4>3. Оформление заказа и выдача</h4>
+    <p>3.1. Для оформления заявки пользователь выбирает товар, указывает корректный игровой ник Minecraft Java и контактный Email или Telegram.</p>
+    <p>3.2. Пользователь несёт ответственность за правильность введённого ника и контактных данных. Администрация не запрашивает пароль, коды двухфакторной аутентификации или доступ к игровому аккаунту.</p>
+    <p>3.3. После получения и проверки подтверждения оплаты товар выдаётся Администрацией вручную в течение 24 часов, если иной срок не согласован с покупателем.</p>
+    <p>3.4. Заказ считается оплаченным только после подтверждения платёжным провайдером. Скриншот или сообщение пользователя сами по себе не заменяют подтверждение транзакции.</p>
+    <p>3.5. Если выдача задерживается, пользователь может обратиться в поддержку, указав номер заказа, игровой ник и дату оплаты.</p>
+    <h4>4. Стоимость и оплата</h4>
+    <p>4.1. Цены отображаются в выбранной валюте: MDL, RUB, USD или EUR. До подтверждения оплаты пользователь должен проверить итоговую сумму, валюту и доступные способы оплаты.</p>
+    <p>4.2. Пересчёт между валютами на сайте может быть ориентировочным. Итоговая сумма определяется платёжной страницей провайдера и условиями выбранного способа оплаты.</p>
+    <p>4.3. Приём платежей осуществляется только после фактического подключения и активации платёжного провайдера. До этого момента сайт работает в демонстрационном режиме и не принимает оплату.</p>
+    <p>4.4. Пользователь не должен передавать Администрации данные банковской карты, PIN-коды или пароли. Платёжные реквизиты вводятся только на защищённой странице платёжного провайдера, если такая оплата будет подключена.</p>
+    <h4>5. Права и обязанности сторон</h4>
+    <p>5.1. Пользователь обязуется соблюдать правила сервера, не использовать Сервис для противоправных действий, предоставлять достоверные данные и не вмешиваться в работу сайта.</p>
+    <p>5.2. Администрация обязуется корректно отображать описание и стоимость товаров, обрабатывать обращения и предпринимать разумные меры для выдачи оплаченного товара.</p>
+    <p>5.3. Администрация вправе обновлять каталог, описания и интерфейс. Изменения не должны задним числом ухудшать уже подтверждённые обязательства по оплаченному заказу.</p>
+    <h4>6. Ограничение доступа и технические работы</h4>
+    <p>6.1. Доступ к Сервису или отдельным функциям может временно ограничиваться при технических работах, сбоях, подозрении на злоупотребление, нарушении правил или по обязательному требованию закона либо платёжного провайдера.</p>
+    <p>6.2. Администрация по возможности информирует пользователей о плановых работах. Временная недоступность сайта или сервера сама по себе не отменяет обязанность рассмотреть обращение по оплаченному заказу.</p>
+    <h4>7. Платежи и возвраты</h4>
+    <p>7.1. До оплаты пользователь видит состав заказа и его стоимость. Пользователь должен проверить ник, товары, количество и валюту до подтверждения платежа.</p>
+    <p>7.2. Если заказ не исполнен, товар не предоставлен, предоставлен с существенной ошибкой либо списание произошло ошибочно, пользователь вправе обратиться в поддержку для проверки ситуации.</p>
+    <p>7.3. Запросы о возврате рассматриваются индивидуально с учётом фактического исполнения заказа, применимого законодательства и обязательных правил платёжного провайдера. Условия Соглашения не ограничивают права потребителя, которые нельзя ограничить договором.</p>
+    <p>7.4. Для ускорения проверки рекомендуется обратиться в поддержку в течение 24 часов после обнаружения проблемы и приложить номер заказа и подтверждение платежа. Это рекомендация по оперативной обработке, а не отказ от иных сроков и прав, предусмотренных законом.</p>
+    <p>7.5. Если товар ещё не выдан, Администрация проверяет возможность отмены заказа и возврата средств. Если товар выдан неверно или не работает по вине Сервиса, Администрация предлагает исправление, повторную выдачу либо возврат в случаях, предусмотренных законом и правилами провайдера.</p>
+    <p>7.6. Пользователь может обратиться к платёжному провайдеру или в компетентные органы в порядке, предусмотренном законом. Просьба сначала связаться с поддержкой не является запретом на использование законных способов защиты прав.</p>
+    <h4>8. Интеллектуальная собственность</h4>
+    <p>8.1. Элементы оформления сайта, тексты, логотипы и оригинальные материалы TewoCraft охраняются применимым законодательством и принадлежат соответствующим правообладателям либо используются на законном основании.</p>
+    <p>8.2. Запрещается копировать и использовать материалы сайта в коммерческих целях без разрешения правообладателя, за исключением случаев, прямо разрешённых законом.</p>
+    <h4>9. Ответственность и отказ от гарантий</h4>
+    <p>9.1. Администрация принимает разумные меры для стабильной работы Сервиса, но не гарантирует отсутствие кратковременных технических сбоев, перерывов связи или работ на стороне третьих лиц.</p>
+    <p>9.2. Администрация не отвечает за ошибки, вызванные неверным игровым ником, некорректными контактными данными, действиями пользователя или сбоями внешних платформ, если такие обстоятельства находятся вне разумного контроля Администрации.</p>
+    <p>9.3. Ничто в Соглашении не исключает и не ограничивает ответственность, которая не может быть исключена или ограничена в соответствии с применимым законодательством.</p>
+    <h4>10. Изменение условий и контакты</h4>
+    <p>10.1. Администрация вправе обновлять Соглашение. Актуальная редакция публикуется на сайте с указанием даты обновления.</p>
+    <p>10.2. Изменения применяются к дальнейшему использованию Сервиса и новым заказам. Для ранее оплаченных заказов сохраняются условия, действовавшие на момент оформления, если иное не требуется законом.</p>
+    <p>10.3. По вопросам заказа и работы Сервиса: tewocraft.official@gmail.com или Telegram @Tewo_Dev. Обычный срок ответа поддержки — до 24 часов.</p>
+   </article>
+   <article class="info-card" id="privacy">
+    <h3>Политика конфиденциальности</h3><p><strong>Дата редакции: 09.11.2026.</strong></p>
+    <h4>1. Общие положения</h4><p>Политика описывает обработку информации, которую пользователь предоставляет при использовании сайта TewoCraft, оформлении заказа или обращении в поддержку.</p>
+    <h4>2. Какие данные могут обрабатываться</h4><p>В зависимости от используемых функций могут обрабатываться игровой ник, Email или Telegram для связи, сведения о составе и статусе заказа, дата и сумма операции, а также технические данные: IP-адрес, тип браузера, устройство, операционная система и журналы взаимодействия. Сайт не должен запрашивать паспортные данные, пароль от игрового аккаунта или полные данные банковской карты.</p>
+    <h4>3. Цели обработки</h4><p>Данные используются для оформления и идентификации заказа, связи с пользователем, выдачи цифрового товара, поддержки, предотвращения мошенничества, обеспечения безопасности, диагностики ошибок и улучшения работы Сервиса.</p>
+    <h4>4. Передача третьим лицам</h4><p>Данные не продаются и не передаются посторонним лицам для их самостоятельного маркетинга. Передача может осуществляться платёжному провайдеру, хостинг-провайдеру или техническим подрядчикам в объёме, необходимом для работы Сервиса, а также государственным органам при наличии законного требования.</p>
+    <h4>5. Хранение и защита</h4><p>Данные хранятся не дольше, чем это необходимо для целей обработки, исполнения заказа, разрешения споров и выполнения обязательных требований закона. Применяются разумные организационные и технические меры защиты. Абсолютная безопасность передачи информации через Интернет не может быть гарантирована.</p>
+    <h4>6. Права пользователя</h4><p>Пользователь может обратиться по указанному ниже Email с вопросом о своих данных, попросить уточнить или исправить неточную информацию, а также запросить удаление данных, если их дальнейшее хранение не требуется по закону или для защиты прав сторон.</p>
+    <h4>7. Файлы и локальное хранение</h4><p>Отдельные настройки, профиль и демонстрационная история заказов могут сохраняться локально в браузере пользователя. Очистка данных браузера может удалить эту информацию. Локальные записи не являются подтверждением оплаты.</p>
+    <h4>8. Изменения политики</h4><p>Администрация может обновлять Политику. Актуальная версия публикуется на сайте с датой редакции. Существенные изменения применяются с учётом требований применимого законодательства.</p>
+    <h4>9. Контакты</h4><p>По вопросам конфиденциальности: <a href="mailto:tewocraft.official@gmail.com">tewocraft.official@gmail.com</a>. Telegram для обращений: <a href="https://t.me/Tewo_Dev" target="_blank" rel="noopener">@Tewo_Dev</a>.</p>
+   </article>
+   <article class="info-card" id="refund">
+    <h3>Порядок возврата и рассмотрения обращений</h3><p><strong>Дата редакции: 09.11.2026.</strong></p>
+    <p>Если покупатель обнаружил, что оплата списана, но заказ не подтверждён, товар не выдан, выдан не на тот ник или описание товара существенно не соответствует полученному результату, необходимо обратиться в поддержку.</p>
+    <p>В обращении укажите игровой ник, номер заказа (если присвоен), дату и сумму платежа, выбранную валюту, контакт для ответа и краткое описание проблемы. Не отправляйте полный номер карты, CVV/CVC, пароли или коды подтверждения.</p>
+    <p>Поддержка отвечает в течение 24 часов. Выдача цифрового товара выполняется вручную в течение 24 часов после подтверждения оплаты. Если требуется дополнительная проверка платёжной операции, срок может увеличиться; покупателю сообщается о ходе рассмотрения.</p>
+    <p>Если товар не был выдан, Администрация проверяет статус платежа и предлагает исполнение заказа либо возврат в соответствии с применимым законом и правилами платёжного провайдера. Если товар выдан с ошибкой, Администрация проверяет возможность исправления или повторной выдачи.</p>
+    <p>После фактического предоставления цифрового товара возможность возврата оценивается с учётом характера товара, фактических обстоятельств и обязательных норм закона. Настоящий порядок не отменяет неотчуждаемые права покупателя.</p>
+    <p>Обращения: <a href="mailto:tewocraft.official@gmail.com">tewocraft.official@gmail.com</a> или <a href="https://t.me/Tewo_Dev" target="_blank" rel="noopener">Telegram @Tewo_Dev</a>.</p>
+   </article>
+   <article class="info-card" id="store-rules">
+    <h3>Правила магазина</h3><p><strong>Дата редакции: 09.11.2026.</strong></p>
+    <ul><li>Проверяйте товар, описание, цену и валюту перед оплатой.</li><li>Указывайте точный ник Minecraft Java — выдача выполняется вручную на него.</li><li>Выдача осуществляется в течение 24 часов после подтверждения оплаты.</li><li>Не передавайте пароль от игрового аккаунта, коды подтверждения или реквизиты карты.</li><li>Не используйте сайт для мошенничества, атак, обхода ограничений или иных противоправных действий.</li><li>Соблюдайте правила самого игрового сервера TewoCraft.</li><li>Поддержка отвечает в течение 24 часов через Email или Telegram.</li></ul>
+   </article>
+   <article class="info-card">
+    <h3>Контактная информация</h3><p><strong>Проект:</strong> TewoCraft.</p><p><strong>Контактная почта:</strong> <a href="mailto:tewocraft.official@gmail.com">tewocraft.official@gmail.com</a>.</p><p><strong>Telegram:</strong> <a href="https://t.me/Tewo_Dev" target="_blank" rel="noopener">@Tewo_Dev</a>.</p><p><strong>Версия сервера:</strong> Minecraft Java 1.16.5.</p><p><strong>Срок ответа поддержки:</strong> до 24 часов.</p><p>Юридические сведения о лице, принимающем платежи, должны быть заполнены в соответствии с требованиями законодательства и платёжного провайдера до включения оплаты. Личные идентификаторы и домашний адрес на этой странице не публикуются.</p>
+   </article>
+  </div>
+  <div class="info-note">Сайт остаётся демонстрационным: платёжный API не подключён. Тексты подготовлены как расширенный проект документов по структуре, указанной менеджером, но не являются заключением юриста. До запуска приёма денег Platega должна подтвердить допустимую форму продавца, обязательные реквизиты и окончательные условия.</div>
+ </div>
+</section>
+<section class="section" id="support">
+ <div class="wrap">
+  <div class="section-head"><div><div class="kicker">Мы на связи</div><h2>💬 Поддержка TewoCraft</h2><p class="section-sub">Опиши вопрос — ответим в течение 24 часов.</p></div></div>
+  <div class="info-grid">
+   <article class="info-card">
+    <h3>Написать в поддержку</h3>
+    <form id="supportForm" class="support-form">
+     <label for="supportTopic">Тема обращения</label><select id="supportTopic" class="field"><option>Вопрос по товару</option><option>Проблема с заказом</option><option>Оплата или возврат</option><option>Техническая проблема</option><option>Другое</option></select>
+     <label for="supportNick">Ник Minecraft (необязательно)</label><input id="supportNick" class="field" maxlength="16" placeholder="Твой ник">
+     <label for="supportMessage">Сообщение</label><textarea id="supportMessage" class="field" rows="4" maxlength="1500" required placeholder="Опиши, чем мы можем помочь..."></textarea>
+     <button class="primary" type="submit">Отправить обращение →</button>
+     <p class="notice">Откроется почтовое приложение с подготовленным письмом. Форма не отправляет данные на сервер сайта.</p>
+    </form>
+   </article>
+   <article class="info-card"><h3>Другие способы связи</h3><p>Почта: <a href="mailto:tewocraft.official@gmail.com">tewocraft.official@gmail.com</a></p><p>Telegram: <a href="https://t.me/Tewo_Dev" target="_blank" rel="noopener">@Tewo_Dev</a></p><p>YouTube: <a href="https://www.youtube.com/@TewoCraft" target="_blank" rel="noopener">TewoCraft</a></p><p>TikTok: <a href="https://www.tiktok.com/@tewocraft.official" target="_blank" rel="noopener">@tewocraft.official</a></p><div class="info-note">Для обращения по заказу подготовь игровой ник и номер заявки. Никогда не отправляй пароль, данные карты или коды подтверждения.</div></article>
+  </div>
+ </div>
+</section>
+<section class="section" id="how"><div class="wrap"><div class="section-head"><div><div class="kicker">Всего три шага</div><h2>Как купить?</h2></div></div><div class="steps"><div class="step"><strong>01</strong><h4>Выбери товар</h4><p>Выбери игровую привилегию или кейс.</p></div><div class="step"><strong>02</strong><h4>Добавь в корзину</h4><p>Укажи свой игровой ник Minecraft Java.</p></div><div class="step"><strong>03</strong><h4>Получи покупку</h4><p>После подключения оплаты товар можно будет выдать на сервере.</p></div></div></div></section></main>
+<footer class="footer"><div class="wrap footer-row"><div><a class="brand" href="#home" style="color:white"><span class="brand-icon">⛏</span> TEWOCRAFT</a><p>Фан-магазин сервера TewoCraft.me<br>Minecraft является товарным знаком Mojang AB. Сайт не связан с Mojang или Microsoft.</p></div><div><b>TEWOCRAFT • PLAY. BUILD. WIN.</b><p>Демонстрационный магазин. Приём реальных платежей пока отключён.</p>
+      <div class="socials" aria-label="Социальные сети TewoCraft">
+        <a class="social-icon youtube" href="https://www.youtube.com/@TewoCraft" target="_blank" rel="noopener noreferrer" aria-label="Открыть YouTube TewoCraft" title="YouTube">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.2 3.6-6.2 3.6Z"/></svg>
+        </a>
+        <a class="social-icon tiktok" href="https://www.tiktok.com/@tewocraft.official" target="_blank" rel="noopener noreferrer" aria-label="Открыть TikTok TewoCraft" title="TikTok">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.6 6.2a5.7 5.7 0 0 1-3.5-4.7V1h-4.2v15.1a3.1 3.1 0 1 1-2.7-3.1v-4.3a7.4 7.4 0 1 0 6.9 7.4V8.4a9.8 9.8 0 0 0 5.7 1.8V6a5.8 5.8 0 0 1-2.2.2Z"/></svg>
+        </a>
+        <a class="social-icon telegram" href="https://t.me/Tewo_Dev" target="_blank" rel="noopener noreferrer" aria-label="Открыть Telegram @Tewo_Dev" title="Telegram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.8 4.2 18.7 19c-.2 1- .8 1.2-1.6.8l-4.5-3.3-2.2 2.1c-.2.2-.4.4-.8.4l.3-4.6 8.4-7.6c.4-.3-.1-.5-.6-.2L7.3 13.2 2.8 11.8c-1-.3-1-1 .2-1.5L20.5 3.5c.8-.3 1.5.2 1.3.7Z"/></svg>
+        </a>
+        <button class="social-icon discord" type="button" id="discordSocial" aria-label="Скопировать Discord @aplkody153" title="Discord — нажми, чтобы скопировать ник">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.7 5.2A18 18 0 0 0 15.3 4l-.5 1a16 16 0 0 0-5.6 0l-.5-1a18 18 0 0 0-4.4 1.2C1.5 9.3.7 13.3 1.1 17.2a18 18 0 0 0 5.4 2.7l1.2-2a11 11 0 0 1-1.9-.9l.5-.4a12.8 12.8 0 0 0 11.4 0l.5.4a11 11 0 0 1-1.9.9l1.2 2a18 18 0 0 0 5.4-2.7c.5-4.5-.8-8.5-3.2-12Zm-11 9.7c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Zm6.6 0c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Z"/></svg>
+        </button>
+      </div>
+      <p class="social-note">Discord: <b>@aplkody153</b> · нажми на значок, чтобы скопировать ник</p>
+      <div class="footer-links">
+        <a href="#about">О проекте</a><a href="#payment">Оплата</a>
+        <a href="#offer">Оферта</a><a href="#privacy">Конфиденциальность</a><a href="#refund">Возврат</a><a href="#rules">Правила</a>
+        <a href="#support">Поддержка</a>
+      </div></div></div></footer>
+<div class="modal-bg" id="cartModal"><div class="modal"><div class="modal-head"><h3 style="margin:0">🛒 Твоя корзина</h3><button class="close" id="closeCart">✕</button></div><div id="cartItems"></div><label for="nickname" style="font-weight:800;font-size:13px">Ник в Minecraft Java</label><input id="nickname" class="field" placeholder="Например, Steve" maxlength="16"><label for="customerContact" style="font-weight:800;font-size:13px">Email или Telegram для связи (обязательно)</label><input id="customerContact" class="field" type="text" placeholder="name@example.com или @username" maxlength="120" autocomplete="email"><div class="total"><span>Итого</span><span id="total">0 lei</span></div><p class="notice" id="cartLimit">Максимум заказа: 2 200 MDL</p><button class="primary" id="checkout" style="width:100%">Перейти к оформлению →</button><p class="notice">Демонстрационный режим: платёжный сервис не подключён. При оформлении тестовая заявка сохраняется только в истории этого браузера и не является оплатой или подтверждением покупки. Для связи укажи Email или Telegram. Не вводи данные банковской карты. Для запуска подключи защищённый платёжный сервис и серверную проверку платежей.</p></div></div><div class="toast" id="toast">Добавлено в корзину!</div>
+<script>
+const products=[
+{id:'p1',type:'priv',name:'VIP',desc:'Стартовый набор возможностей и красивый префикс.',emoji:'🥉',price:25,mode:'Гриф',tag:'Старт'},
+{id:'p2',type:'priv',name:'PREMIUM',desc:'Больше команд, бонусов и внимания на сервере.',emoji:'🥈',price:45,mode:'Гриф',tag:'Популярно'},
+{id:'p3',type:'priv',name:'ELITE',desc:'Для тех, кто хочет выделяться среди игроков.',emoji:'🥇',price:69,mode:'Анархия',tag:'Хит'},
+{id:'p4',type:'priv',name:'HERO',desc:'Особый статус и дополнительные игровые плюшки.',emoji:'🦸',price:89,mode:'SMP',tag:'Мощно'},
+{id:'p5',type:'priv',name:'LEGEND',desc:'Легендарный ранг для настоящих чемпионов.',emoji:'👑',price:119,mode:'Анархия',tag:'Топ'},
+{id:'p6',type:'priv',name:'TITAN',desc:'Максимальный стиль и максимум привилегий.',emoji:'⚡',price:149,mode:'SMP',tag:'Легенда'},
+{id:'p7',type:'priv',name:'SCOUT',desc:'Быстрый старт: цветной префикс, набор новичка и дополнительные игровые возможности.',emoji:'🧭',price:15,mode:'Гриф',tag:'Новинка'},
+{id:'p8',type:'priv',name:'MVP',desc:'Дополнительные дома, наборы и удобные команды каждый день.',emoji:'🌟',price:59,mode:'Гриф',tag:'Выгодно'},
+{id:'p9',type:'priv',name:'OVERLORD',desc:'Редкий статус, особый чат и расширенные игровые лимиты.',emoji:'🔥',price:99,mode:'Анархия',tag:'Редкий'},
+{id:'p10',type:'priv',name:'PHANTOM',desc:'Стильный эффект входа, дополнительные варпы и бонусы.',emoji:'👻',price:79,mode:'Анархия',tag:'Особый'},
+{id:'p11',type:'priv',name:'DRUID',desc:'Для строителей: больше регионов, домов и возможностей SMP.',emoji:'🌿',price:39,mode:'SMP',tag:'Для SMP'},
+{id:'p12',type:'priv',name:'RANGER',desc:'Удобные команды, дополнительные слоты и ежедневный бонус.',emoji:'🏹',price:55,mode:'SMP',tag:'Популярно'},
+{id:'p13',type:'priv',name:'PALADIN',desc:'Улучшенный набор, яркий префикс и приятные игровые бонусы.',emoji:'🛡️',price:109,mode:'Гриф',tag:'Премиум'},
+{id:'p14',type:'priv',name:'MYTHIC',desc:'Эксклюзивный ранг с максимальным набором косметики и команд.',emoji:'🔮',price:129,mode:'Анархия',tag:'Мифический'},
+{id:'p15',type:'priv',name:'COSMIC',desc:'Космический стиль, особый цвет чата и расширенные лимиты.',emoji:'🌌',price:139,mode:'SMP',tag:'Эксклюзив'},
+{id:'p16',type:'priv',name:'ULTRA',desc:'Сильный универсальный ранг для активных игроков всех режимов.',emoji:'💠',price:159,mode:'Гриф',tag:'Топ продаж'},
+{id:'p17',type:'priv',name:'BED VIP',desc:'Особый префикс, дополнительные наборы и бонусы для BedWars.',emoji:'🛏️',price:29,mode:'BedWars',tag:'BedWars'},
+{id:'p18',type:'priv',name:'BED ELITE',desc:'Больше косметики, эффектов победы и удобных возможностей BedWars.',emoji:'🏆',price:59,mode:'BedWars',tag:'Хит BedWars'},
+{id:'p19',type:'priv',name:'BED LEGEND',desc:'Премиальный статус, уникальный стиль и расширенные бонусы BedWars.',emoji:'🛡️',price:89,mode:'BedWars',tag:'Легенда'},
+{id:'c1',type:'case',name:'STARTER CASE',desc:'Небольшой сюрприз: базовая косметика и оформление для персонажа.',emoji:'📦',price:15,mode:'Все режимы',tag:'Старт'},
+{id:'c2',type:'case',name:'RARE CASE',desc:'Больше шансов получить редкие визуальные эффекты и украшения.',emoji:'🎁',price:35,mode:'Все режимы',tag:'Редкий'},
+{id:'c3',type:'case',name:'LEGENDARY CASE',desc:'Премиальный кейс с эффектной косметикой и редким оформлением.',emoji:'💎',price:65,mode:'Все режимы',tag:'Легендарный'},
+{id:'p20',type:'priv',name:'NOVA',desc:'Яркий статус, дополнительные команды и косметические бонусы.',emoji:'🌠',price:49,mode:'Гриф',tag:'Новинка'},
+{id:'p21',type:'priv',name:'EMPEROR',desc:'Королевский префикс, особое оформление и расширенные возможности.',emoji:'👑',price:179,mode:'Анархия',tag:'Премиум'},
+{id:'p22',type:'priv',name:'WARRIOR',desc:'Боевой стиль, уникальный префикс и дополнительные удобства.',emoji:'⚔️',price:75,mode:'Гриф',tag:'Воин'},
+{id:'p23',type:'priv',name:'DRAGON',desc:'Редкий статус с драконьей тематикой и эффектным оформлением.',emoji:'🐉',price:199,mode:'SMP',tag:'Редкий'},
+{id:'p24',type:'priv',name:'ACE',desc:'Статус для опытных игроков с дополнительными командами.',emoji:'🃏',price:95,mode:'BedWars',tag:'BedWars'},
+{id:'p25',type:'priv',name:'INFINITY',desc:'Максимальный набор визуальных возможностей и привилегий.',emoji:'♾️',price:229,mode:'Все режимы',tag:'Максимум'},
+{id:'p26',type:'priv',name:'SHADOW',desc:'Тёмный стиль, особый префикс и дополнительные игровые удобства.',emoji:'🌑',price:119,mode:'Анархия',tag:'Стиль'},
+{id:'p27',type:'priv',name:'ROYAL',desc:'Статус с золотым оформлением и расширенным набором возможностей.',emoji:'🏅',price:189,mode:'SMP',tag:'Королевский'},
+{id:'c4',type:'case',name:'EPIC CASE',desc:'Кейс с тематической косметикой, эффектами и коллекционными предметами.',emoji:'🌟',price:49,mode:'Все режимы',tag:'Эпический'},
+{id:'c5',type:'case',name:'MAGIC CASE',desc:'Магический набор визуальных эффектов и украшений для персонажа.',emoji:'🪄',price:79,mode:'Все режимы',tag:'Магический'},
+{id:'c6',type:'case',name:'TEWO CASE',desc:'Фирменный кейс TewoCraft с подборкой редкой косметики.',emoji:'🎊',price:99,mode:'Все режимы',tag:'Фирменный'}
+];
+const rates={MDL:1,RUB:10000/2200,USD:122/2200,EUR:110/2200},symbols={MDL:'lei',RUB:'₽',USD:'$',EUR:'€'},caps={MDL:2200,RUB:10000,USD:122,EUR:110};let currency='MDL',cart={},mode='Все режимы',searchTerm='';
+const $=s=>document.querySelector(s);function money(v){let n=v*rates[currency];return (currency==='MDL'?n.toFixed(0):n.toFixed(2))+' '+symbols[currency]}
+function card(p){let perks=p.type==='priv'?['Префикс в чате','Бонусы','Особые команды']:['Игровые награды','Коллекционные вещи'];let featured=['p2','p5','p9','p14'].includes(p.id);return `<article class="product ${p.type==='case'?'case':''} ${featured?'featured':''}" data-id="${p.id}"><div class="product-top"><div class="emoji">${p.emoji}</div><span class="tag">${p.tag}</span></div><h3>${p.name}</h3><p>${p.desc}</p><div class="product-perks">${perks.map(x=>`<span class="perk">✓ ${x}</span>`).join('')}</div><div class="product-bottom"><span class="price">${money(p.price)}</span><button class="add" data-add="${p.id}">+ Добавить</button></div></article>`}
+function render(){ $('#privGrid').innerHTML=products.filter(p=>p.type==='priv'&&(mode==='Все режимы'||p.mode===mode)&&(!searchTerm||(p.name+' '+p.desc+' '+p.mode).toLowerCase().includes(searchTerm))).map(card).join('')||'<p class="notice">Ничего не найдено. Попробуй изменить запрос.</p>';$('#caseGrid').innerHTML=products.filter(p=>p.type==='case').map(card).join('');renderCart()}
+let gameAudio=null;
+function sound(freq=560,duration=.12,type='sine'){
+  try{
+    const C=window.AudioContext||window.webkitAudioContext;
+    if(!C)return;
+    if(!gameAudio)gameAudio=new C();
+    const ctx=gameAudio;
+    if(ctx.state==='suspended')ctx.resume();
+    const now=ctx.currentTime;
+    const master=ctx.createGain();
+    master.gain.setValueAtTime(.0001,now);
+    master.gain.linearRampToValueAtTime(.045,now+.012);
+    master.gain.exponentialRampToValueAtTime(.0001,now+duration+.08);
+    master.connect(ctx.destination);
+    [[freq,0,.0],[freq*1.5,.045,.018]].forEach(([hz,delay,vol],i)=>{
+      const osc=ctx.createOscillator(),gain=ctx.createGain();
+      osc.type=i?'sine':'triangle';
+      osc.frequency.setValueAtTime(hz,now+delay);
+      osc.frequency.exponentialRampToValueAtTime(hz*1.18,now+duration+delay);
+      gain.gain.setValueAtTime(i?.0001:.75,now+delay);
+      gain.gain.linearRampToValueAtTime(i?.24:.9,now+delay+.012);
+      gain.gain.exponentialRampToValueAtTime(.0001,now+duration+delay);
+      osc.connect(gain);gain.connect(master);
+      osc.start(now+delay);osc.stop(now+duration+delay+.02);
+    });
+  }catch(e){}
+}
+function toast(t){$('#toast').textContent=t;$('#toast').classList.add('show');setTimeout(()=>$('#toast').classList.remove('show'),1500)}function cartBaseTotal(){return Object.entries(cart).reduce((s,[id,q])=>s+products.find(p=>p.id===id).price*q,0)}function canAdd(id){const next=cartBaseTotal()+products.find(p=>p.id===id).price;return next*rates[currency]<=caps[currency]+1e-8}function add(id,el){if(!canAdd(id)){toast('Достигнут лимит корзины: '+caps[currency]+' '+symbols[currency]);sound(220,.12);return}cart[id]=(cart[id]||0)+1;renderCart();sound(620,.11,'triangle');toast('✨ '+products.find(p=>p.id===id).name+' добавлен!');if(el){let r=el.getBoundingClientRect(),c=document.createElement('span');c.className='floatcoin';c.textContent='✨';c.style.left=r.left+'px';c.style.top=r.top+'px';document.body.append(c);setTimeout(()=>c.remove(),700)}}
+function renderCart(){let entries=Object.entries(cart).filter(([id,q])=>q>0),qty=entries.reduce((s,[id,q])=>s+q,0),sum=entries.reduce((s,[id,q])=>s+products.find(p=>p.id===id).price*q,0);$('#count').textContent=qty;$('#total').textContent=money(sum);const limit=$('#cartLimit');if(limit)limit.textContent='Максимум заказа: '+caps[currency]+' '+symbols[currency];$('#cartItems').innerHTML=entries.length?entries.map(([id,q])=>{let p=products.find(x=>x.id===id);return `<div class="cart-line"><span>${p.emoji} ${p.name}<br><small style="color:#888">${money(p.price)} × ${q}</small></span><span class="qty"><button data-minus="${id}">−</button>${q}<button data-plus="${id}">+</button></span></div>`}).join(''):'<p style="color:#888;text-align:center;padding:22px">Корзина пока пустая. Добавь что-нибудь крутое! 🎮</p>'}
+document.addEventListener('click',e=>{let a=e.target.closest('[data-add]'),plus=e.target.closest('[data-plus]'),minus=e.target.closest('[data-minus]');if(a)add(a.dataset.add,a);if(plus){if(canAdd(plus.dataset.plus)){cart[plus.dataset.plus]++;sound(700,.07);renderCart()}else{toast('Достигнут лимит корзины: '+caps[currency]+' '+symbols[currency]);sound(220,.12)}}if(minus){cart[minus.dataset.minus]--;if(cart[minus.dataset.minus]<=0)delete cart[minus.dataset.minus];sound(360,.07);renderCart()}});
+$('#productSearch').addEventListener('input',e=>{searchTerm=e.target.value.trim().toLowerCase();render()});$('#currency').addEventListener('change',e=>{currency=e.target.value;render();if(cartBaseTotal()*rates[currency]>caps[currency]+1e-8)toast('В этой валюте корзина превышает лимит. Уменьши заказ.');sound(500,.08)});$('#modeTabs').addEventListener('click',e=>{let b=e.target.closest('[data-mode]');if(!b)return;mode=b.dataset.mode;document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',t===b));render();sound(480,.07)});
+$('#openCart').onclick=()=>{$('#cartModal').classList.add('show');sound(520,.08)};$('#closeCart').onclick=()=>$('#cartModal').classList.remove('show');$('#cartModal').addEventListener('click',e=>{if(e.target.id==='cartModal')$('#cartModal').classList.remove('show')});
+const PROFILE_KEY='tewocraft_profile_v1',ORDERS_KEY='tewocraft_orders_v1';
+function readProfile(){try{return JSON.parse(localStorage.getItem(PROFILE_KEY)||'{}')}catch(e){return {}}}
+function readOrders(){try{return JSON.parse(localStorage.getItem(ORDERS_KEY)||'[]')}catch(e){return []}}
+function updateDrawerProfile(){const p=readProfile();$('#drawerUserName').textContent=p.nick||'Мой профиль';$('#drawerUserHint').textContent=p.contact||'Сохрани ник и контакт в профиле'}
+function renderHistory(){const list=readOrders();$('#purchaseHistory').innerHTML=list.length?list.slice().reverse().map(o=>`<div class="history-item"><b>${o.items.map(i=>i.name+' × '+i.qty).join(', ')}</b><small>Заказ ${o.id} · ${o.date} · ${o.total}</small><span class="status-demo">${o.status}</span></div>`).join(''):'<p class="notice">Пока нет заказов. Здесь будут отображаться заявки, оформленные в этом браузере.</p>'}
+function openProfile(){const p=readProfile();$('#profileNick').value=p.nick||'';$('#profileContact').value=p.contact||'';renderHistory();$('#profileModal').classList.add('show');sound(540,.08)}
+$('#saveProfile').onclick=()=>{const nick=$('#profileNick').value.trim(),contact=$('#profileContact').value.trim();if(nick&&!/^[A-Za-z0-9_]{3,16}$/.test(nick)){toast('Проверь ник Minecraft (3–16 символов)');return}if(contact&&!(/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(contact)||/^@?[A-Za-z0-9_]{5,32}$/.test(contact))){toast('Проверь Email или Telegram');return}localStorage.setItem(PROFILE_KEY,JSON.stringify({nick,contact}));updateDrawerProfile();toast('Профиль сохранён на этом устройстве');sound(680,.1);};
+$('#openProfile').onclick=()=>{closeDrawer();openProfile()};$('#closeProfile').onclick=()=>$('#profileModal').classList.remove('show');$('#profileModal').addEventListener('click',e=>{if(e.target.id==='profileModal')$('#profileModal').classList.remove('show')});
+$('#clearHistory').onclick=()=>{if(confirm('Удалить историю заказов из этого браузера?')){localStorage.removeItem(ORDERS_KEY);renderHistory();toast('История очищена')}};
+$('#checkout').onclick=()=>{if(cartBaseTotal()*rates[currency]>caps[currency]+1e-8){toast('Превышен лимит корзины: '+caps[currency]+' '+symbols[currency]);sound(220,.12);return}if(!Object.keys(cart).length){toast('Сначала добавь товар в корзину 🙂');sound(220,.12);return}const nick=$('#nickname').value.trim();if(!nick){toast('Введи игровой ник!');$('#nickname').focus();sound(220,.12);return}const contact=$('#customerContact').value.trim();const validEmail=/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(contact);const validTelegram=/^@?[A-Za-z0-9_]{5,32}$/.test(contact);if(!contact||(!validEmail&&!validTelegram)){toast('Введи корректный Email или Telegram!');$('#customerContact').focus();sound(220,.12);return}const order={id:'TW-'+Date.now().toString().slice(-8),date:new Date().toLocaleString('ru-RU'),items:Object.entries(cart).map(([id,qty])=>({name:products.find(p=>p.id===id).name,qty})),total:money(cartBaseTotal()),status:'Демо-заявка · НЕ ОПЛАЧЕНО'};const orders=readOrders();orders.push(order);localStorage.setItem(ORDERS_KEY,JSON.stringify(orders));localStorage.setItem(PROFILE_KEY,JSON.stringify({nick,contact}));updateDrawerProfile();cart={};render();$('#cartModal').classList.remove('show');toast('Заявка сохранена в профиле. Оплата пока отключена');sound(620,.14);};
+const discordSocial=$('#discordSocial');
+if(discordSocial)discordSocial.addEventListener('click',async()=>{
+  try{await navigator.clipboard.writeText('@aplkody153');toast('Discord ник скопирован: @aplkody153')}
+  catch(e){toast('Discord: @aplkody153')}
+  sound(620,.1,'triangle');
+});
+
+const drawer=$('#sideDrawer'),backdrop=$('#drawerBackdrop');
+function openDrawer(){document.body.classList.add('drawer-open');$('#menuToggle').setAttribute('aria-expanded','true');backdrop.setAttribute('aria-hidden','false');sound(460,.08)}
+function closeDrawer(){document.body.classList.remove('drawer-open');$('#menuToggle').setAttribute('aria-expanded','false');backdrop.setAttribute('aria-hidden','true')}
+$('#menuToggle').onclick=openDrawer;$('#closeDrawer').onclick=closeDrawer;backdrop.onclick=closeDrawer;
+function closeDrawerIfLink(e){if(e.target.closest('.drawer-link'))closeDrawer()}
+drawer.addEventListener('click',closeDrawerIfLink);
+const supportForm=$('#supportForm');if(supportForm)supportForm.addEventListener('submit',e=>{e.preventDefault();const topic=$('#supportTopic').value,nick=$('#supportNick').value.trim(),msg=$('#supportMessage').value.trim();if(!msg){toast('Напиши сообщение');return}const body=`Тема: ${topic}%0D%0AНик Minecraft: ${encodeURIComponent(nick||'не указан')}%0D%0A%0D%0A${encodeURIComponent(msg)}`;window.location.href=`mailto:tewocraft.official@gmail.com?subject=${encodeURIComponent('Поддержка TewoCraft — '+topic)}&body=${body}`;sound(600,.1)});
+updateDrawerProfile();
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeDrawer();$('#profileModal').classList.remove('show');$('#cartModal').classList.remove('show')}});
+if('IntersectionObserver' in window){const io=new IntersectionObserver(entries=>entries.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');io.unobserve(x.target)}}),{threshold:.08});document.querySelectorAll('.section,.banner,.step,.product').forEach(el=>{el.classList.add('reveal');io.observe(el)})}
+render();
+</script></body></html>
